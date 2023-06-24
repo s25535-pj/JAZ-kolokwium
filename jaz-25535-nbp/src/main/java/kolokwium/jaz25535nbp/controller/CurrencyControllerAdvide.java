@@ -46,6 +46,6 @@ public class CurrencyControllerAdvide {
     @ExceptionHandler(Exception.class)
     public ResponseEntity<String> handleGenericException(Exception ex) {
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .body("Inny wyjatek ktorego nie zdażyłem obsłużyć" + ex.getLocalizedMessage());
+                .body("Inny wyjatek ktorego nie zdażyłem obsłużyć; Walidacji daty nie ma :(, jedynie czy ilość dni nie jest ujemna: " + ex.getLocalizedMessage());
     }
 }

@@ -26,7 +26,7 @@ public class CurrencyService {
 
         int days = (int) DAYS.between(startDate, endDate);
         if(days <= 0){
-            throw new WrongInputException("Daty podane niepoprawnie");
+            throw new WrongInputException("Daty podane niepoprawnie, liczba dni wychodzi ujemna.");
         }
 //                    http://api.nbp.pl/api/exchangerates/rates/A/EUR/2019-01-01/2019-01-10/
         String url = "http://api.nbp.pl/api/exchangerates/rates/A/" + currency + "/" + startDate +  "/" + endDate + "/" + "?format=json";
